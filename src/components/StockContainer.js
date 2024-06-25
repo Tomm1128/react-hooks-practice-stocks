@@ -1,9 +1,11 @@
 import React from "react"
 import Stock from "./Stock"
 
-function StockContainer({ stocks }) {
+function StockContainer({ stocks, updatePortfolio }) {
   const stockCards = stocks.map((stock) => {
-    return <Stock key={stock.id} stock={stock} />
+    return (
+      <Stock key={stock.id} stock={stock} handlePortfolio={updatePortfolio} />
+    )
   })
   return (
     <div>
