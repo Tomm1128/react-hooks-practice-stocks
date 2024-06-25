@@ -7,6 +7,7 @@ function PortfolioContainer({ portfolio, removePortfolio }) {
       <Stock key={stock.id} stock={stock} handlePortfolio={removePortfolio} />
     )
   })
+
   return (
     <div>
       <h2>My Portfolio</h2>

@@ -7,6 +7,7 @@ function MainContainer() {
   const [stocks, setStocks] = useState(null)
   const [portfolio, setPortfolio] = useState([])
   const [sort, setSort] = useState("none")
+  const [filter, setFilter] = useState("All")
 
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
@@ -39,13 +40,17 @@ function MainContainer() {
     }
   })
 
+  const filteredSortedStocks = sortedStocks.filter((stock) =>
+    filter === "All" ? true : stock.type === filter
+  )
+
   return (
     <div>
-      <SearchBar setSort={setSort} />
+      <SearchBar setSort={setSort} setFilter={setFilter} />
       <div className="row">
         <div className="col-8">
           <StockContainer
-            stocks={sortedStocks}
+            stocks={filteredSortedStocks}
             updatePortfolio={updatePortfolio}
           />
         </div>

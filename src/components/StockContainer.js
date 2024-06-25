@@ -7,6 +7,7 @@ function StockContainer({ stocks, updatePortfolio }) {
       <Stock key={stock.id} stock={stock} handlePortfolio={updatePortfolio} />
     )
   })
+
   return (
     <div>
       <h2>Stocks</h2>

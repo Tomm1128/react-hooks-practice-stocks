@@ -1,8 +1,12 @@
 import React from "react"
 
-function SearchBar({ setSort }) {
+function SearchBar({ setSort, setFilter }) {
   const updateSortType = (event) => {
     setSort(event.target.value)
+  }
+
+  const updateFilter = (event) => {
+    setFilter(event.target.value)
   }
 
   return (
@@ -31,7 +35,7 @@ function SearchBar({ setSort }) {
       <br />
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select onChange={updateFilter}>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
