@@ -1,6 +1,10 @@
-import React from "react";
+import React from "react"
 
-function SearchBar() {
+function SearchBar({ setSort }) {
+  const updateSortType = (event) => {
+    setSort(event.target.value)
+  }
+
   return (
     <div>
       <strong>Sort by:</strong>
@@ -9,8 +13,8 @@ function SearchBar() {
           type="radio"
           value="Alphabetically"
           name="sort"
-          checked={null}
-          onChange={null}
+          // checked={null}
+          onChange={updateSortType}
         />
         Alphabetically
       </label>
@@ -19,8 +23,8 @@ function SearchBar() {
           type="radio"
           value="Price"
           name="sort"
-          checked={null}
-          onChange={null}
+          // checked={null}
+          onChange={updateSortType}
         />
         Price
       </label>
@@ -34,7 +38,7 @@ function SearchBar() {
         </select>
       </label>
     </div>
-  );
+  )
 }
 
-export default SearchBar;
+export default SearchBar
