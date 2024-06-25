@@ -17,7 +17,6 @@ function SearchBar({ setSort, setFilter }) {
           type="radio"
           value="Alphabetically"
           name="sort"
-          // checked={null}
           onChange={updateSortType}
         />
         Alphabetically
@@ -27,7 +26,6 @@ function SearchBar({ setSort, setFilter }) {
           type="radio"
           value="Price"
           name="sort"
-          // checked={null}
           onChange={updateSortType}
         />
         Price
