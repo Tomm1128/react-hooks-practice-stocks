@@ -1,6 +1,14 @@
-import React from "react";
+import React from "react"
 
-function SearchBar() {
+function SearchBar({ setSort, setFilter }) {
+  const updateSortType = (event) => {
+    setSort(event.target.value)
+  }
+
+  const updateFilter = (event) => {
+    setFilter(event.target.value)
+  }
+
   return (
     <div>
       <strong>Sort by:</strong>
@@ -9,8 +17,7 @@ function SearchBar() {
           type="radio"
           value="Alphabetically"
           name="sort"
-          checked={null}
-          onChange={null}
+          onChange={updateSortType}
         />
         Alphabetically
       </label>
@@ -19,22 +26,21 @@ function SearchBar() {
           type="radio"
           value="Price"
           name="sort"
-          checked={null}
-          onChange={null}
+          onChange={updateSortType}
         />
         Price
       </label>
       <br />
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select onChange={updateFilter}>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
         </select>
       </label>
     </div>
-  );
+  )
 }
 
-export default SearchBar;
+export default SearchBar
